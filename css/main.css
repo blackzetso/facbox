@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.nav {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  direction: rtl;
+  position: fixed;
+  z-index: 99999;
+  transition: all 0.5s ease-in-out;
+  background-color: #7dc916;
+}
+.nav-mobil {
+  bottom: 0;
+  right: 0;
+  background-color: #7bc817;
+}
+
+.nav-mobil .icon {
+  display: block;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 28px;
+  padding: 0;
+  margin: 0;
+}
+.nav-website {
+  top: 0;
+  right: 0;
+}
+
+.nav .container {
+  height: 100%;
+}
+.nav .logo {
+  width: 80px;
+  height: 100%;
+  font-size: 25px;
+  color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav .logo img {
+  width: 100%;
+  height: 100%;
+}
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #f2f2f2;
+  padding: 15px 10px;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.nav ul li a.active{
+  color: #333;
+}
+.nav .basket a {
+  font-size: 30px;
+  color: #f2f2f2;
+}
+
+.serch {
+  margin-top: 50px;
+}
+.serch input {
+  font-size: 15px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #dbd8d8;
+  height: 50px;
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+}
+.product {
+  overflow: hidden;
+  padding: 50px 0;
+  max-width: 100%;
+  position: relative;
+  direction: rtl;
+}
+.product::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  left: 50%;
+  top: 0;
+  bottom: 50px;
+  background-color: #dbd8d8;
+}
+.product .item {
+  width: 100%;
+  border-bottom: 1px solid #dbd8d8;
+  position: relative;
+}
+.product .item a {text-decoration: none;}
+.product .item .photo {
+  height: 80% !important;
+}
+.product .item .photo img {
+  width: 100%;
+  height: 170px !important;
+}
+.product .item .name {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  color: #333;
+  font-family: 'Cairo', sans-serif; 
+  font-size: 14px;
+}
+@media (min-width: 0) and (max-width: 380px) {
+  .nav ul li a {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .nav-mobil .icon {
+    font-size: 25px;
+  }
+}
+
+.badge {
+    color: #fff;
+    background-color: #dc3545; 
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 55%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .45rem;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.text-center {
+    text-align: center!important;
+}
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/*search auto complete */
+autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative !important;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 999999999;
+    top: 100px;
+    left: 0;
+    right: 0;
+    height: 400px;
+    overflow: auto;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+} 
