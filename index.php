@@ -16,11 +16,11 @@
         </form>
     </div>
 
-    <section class="product">
+    <section class="category">
         <div class="container">
             <div class="row" id="result" >
                 <?php foreach($rows as $row){ ?>
-                <div class=" col-6  p-0">
+                <div class=" col-12  p-0">
                     <div class="item">
                         <a href="subcategory.php?id=<?php echo $row['id']; ?>">
                             <div class="photo">

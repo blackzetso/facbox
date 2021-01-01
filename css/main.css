@@ -124,6 +124,45 @@ body {
   font-family: 'Cairo', sans-serif; 
   font-size: 14px;
 }
+/*category*/
+.category {
+  overflow: hidden;
+  padding: 50px 0;
+  max-width: 100%;
+  position: relative;
+  direction: rtl;
+}
+.category::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  left: 50%;
+  top: 0;
+  bottom: 50px;
+}
+.category .item {
+  width: 100%;
+  border-bottom: 1px solid #dbd8d8;
+  position: relative;
+}
+.category .item a {text-decoration: none;}
+.category .item .photo {
+  height: 80% !important;
+}
+.category .item .photo img {
+  width: 100%;
+  height: 170px !important;
+}
+.category .item .name {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  color: #333;
+  font-family: 'Cairo', sans-serif; 
+  font-size: 14px;
+}
+
 @media (min-width: 0) and (max-width: 380px) {
   .nav ul li a {
     font-size: 15px;
