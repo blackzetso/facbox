@@ -1,3 +1,8 @@
+<?php 
+    if(isset($_COOKIE['session'])){
+        $_SESSION['id'] = $_COOKIE['session'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

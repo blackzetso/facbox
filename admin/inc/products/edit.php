@@ -7,6 +7,8 @@
     $name = $_POST['name'];
     $unit = $_POST['unit'];
     $price = $_POST['price'];
+    $unit2 = $_POST['unit2'];
+    $price2 = $_POST['price2'];
     $discount = $_POST['discount'];
     $decimal  = $_POST['decimal'];
     $Availability = $_POST['Availability'];
@@ -17,14 +19,16 @@
                                     SET 
                                 name = ? ,
                                 unite = ?,
+                                unite2 = ?,
                                 price = ?,
+                                price2 = ?,
                                 discount = ?,
                                 Decimal_number = ?,
                                 Availability = ?,
                                 category = ?,
                                 subcategory = ? 
                                     WHERE id = ? ");
-    $stmt->execute([$name,$unit,$price,$discount,$decimal,$Availability,$category,$subCat,$id]);
+    $stmt->execute([$name,$unit,$unit2,$price,$price2,$discount,$decimal,$Availability,$category,$subCat,$id]);
     if($stmt){
         echo successMessage('تم تعديل بيانات المنتج بنجاح');
     }

@@ -1,5 +1,6 @@
-<?php include 'init.php'; 
-    
+<?php 
+      
+      include 'init.php'; 
       $stmt = $con->prepare("SELECT * FROM  categories ORDER BY id ASC");
       $stmt->execute();
       $rows = $stmt->fetchAll(); ?>

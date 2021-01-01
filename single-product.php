@@ -42,11 +42,15 @@
                 <form id="addToCart" >
                     <div class="title">
                         <div class="item">
+                            <?php if($row['price2'] == 'empty'){ ?> 
+                            <div >الكمية بالـ(<?php echo $row['unite']; ?>)</div>
+                            <?php }else{ ?> 
                             <label>الكمية بالـ</label>
                             <select id="unite" class="form-control" >
                                 <option value="unite1" > <?php echo $row['unite']; ?>  </option>
                                 <option value="unite2" > <?php echo $row['unite2']; ?>  </option>
                             </select>
+                            <?php } ?>
                         </div> 
                     </div> 
                     <div class="calculate">
@@ -120,7 +124,7 @@
         calculate(); 
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <?php if(isset($_SESSION['id'])){ ?>
+     
     <script>
         $(document).on('submit','#addToCart',function(event){
             event.preventDefault(); 
@@ -164,8 +168,7 @@
                         }
                     });  
                 })
-    </script>
-    <?php } ?>
+    </script> 
     <script src="js/all.min.js"></script>
 </body>
 </html>

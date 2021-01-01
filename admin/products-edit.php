@@ -45,7 +45,7 @@
                                         
                                         <form id="edit" >
                                             <div class="row text-right" dir="rtl" >  
-                                                <div class="col-md-6 col-sm-12" >
+                                                <div class="col-md-12 col-sm-12" >
                                                     <div class="form-group text-right" >
                                                         <label for="recipient-name" class="form-control-label " dir="rtl"> اسم المنتج : <span class="text-danger" >*</span></label>
                                                         <input type="text" class="form-control text-right" value="<?php echo $row['name'] ?>" dir="rtl" name="name"required > 
@@ -53,7 +53,7 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-12" >
                                                     <div class="form-group text-right" >
-                                                        <label for="recipient-name" class="form-control-label " dir="rtl"> الوحدة : <span class="text-danger" >*</span></label>
+                                                        <label for="recipient-name" class="form-control-label " dir="rtl"> الوحدة الأولى : <span class="text-danger" >*</span></label>
                                                         <select class="form-control" name="unit" >
                                                             <?php foreach($units as $unit){ ?>
                                                             <option <?php if($row['unite'] == $unit['name']){ echo 'selected'; } ?> value="<?php echo $unit['name'] ?>" ><?php echo $unit['name'] ?></option>
@@ -63,8 +63,25 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-12" >
                                                     <div class="form-group text-right" >
-                                                        <label for="recipient-name" class="form-control-label " dir="rtl"> سعر المنتج : <span class="text-danger" >*</span></label>
+                                                        <label for="recipient-name" class="form-control-label " dir="rtl"> الوحدة الثانيه : <span class="text-danger" >*</span></label>
+                                                        <select class="form-control" name="unit2" >
+                                                            <option value="empty" >حدد الوحدة </option>
+                                                            <?php foreach($units as $unit){ ?>
+                                                            <option <?php if($row['unite2'] == $unit['name']){ echo 'selected'; } ?> value="<?php echo $unit['name'] ?>" ><?php echo $unit['name'] ?></option>
+                                                            <?php } ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12" >
+                                                    <div class="form-group text-right" >
+                                                        <label for="recipient-name" class="form-control-label " dir="rtl"> سعر المنتج بالوحده الأولى : <span class="text-danger" >*</span></label>
                                                         <input type="text" class="form-control text-right" value="<?php echo $row['price'] ?>" dir="rtl" name="price"required >
+                                                    </div> 
+                                                </div>
+                                                <div class="col-md-6 col-sm-12" >
+                                                    <div class="form-group text-right" >
+                                                        <label for="recipient-name" class="form-control-label " dir="rtl"> سعر المنتج بالوحده الثانية : <span class="text-danger" >*</span></label>
+                                                        <input type="text" class="form-control text-right" value="<?php echo $row['price2'] ?>" dir="rtl" name="price2"required >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-12" >
@@ -79,7 +96,7 @@
                                                         <input type="text" class="form-control text-right" dir="rtl" name="decimal"required value="<?php echo $row['Decimal_number'] ?>"> 
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 col-sm-12" >
+                                                <div class="col-md-12 col-sm-12" >
                                                     <div class="form-group text-right" >
                                                         <label for="recipient-name" class="form-control-label " dir="rtl"> الإتاحه : <span class="text-danger" >*</span></label>
                                                         <select class="form-control" name="Availability" required > 
