@@ -25,42 +25,8 @@
         </div>
     </nav>
 
-    <?php include 'inc/pages/nav.php'; 
-        $stmt = $con->prepare("SELECT * FROM `orders` WHERE user = ? ORDER BY id DESC");
-        $stmt->execute([$_SESSION['id']]);
-        $Count = $stmt->rowCount();
-        $info = $stmt->fetch();
-        if($Count > 0){ ?> 
-        <section class="forms mb-5">
-            <div id="Success" ></div>
-        <form id="add" >
-                <div class="item">
-                    <input type="text" name="city" value="<?php echo $info['city']; ?>" >
-                </div>
-                <div class="item">
-                    <input type="text" name="zone" value="<?php echo $info['zone']; ?>" >
-                </div>
-                <div class="item">
-                    <input type="text" name="street" value="<?php echo $info['street']; ?>" >
-                </div>
-                <div class="item">
-                    <input type="text" name="build" value="<?php echo $info['build']; ?>" >
-                </div>
-                <div class="item">
-                    <input type="text" name="storey" value="<?php echo $info['storey']; ?>" >
-                </div>
-                <div class="time">
-                    <h4>وقت استلام الطلب</h4>
-                    <div class="hour">
-                        <span>من</span><input type="time" name="time_from" placeholder="اختر الساعه"><span>الي</span><input type="time" name="time_to" placeholder="اختر الساعه">
-                    </div>
-                </div>
-                <div class="btn-save">
-                    <input type="submit"  class="save" value="اتمام الطلب">
-                </div>
-        </form>
-        </section>
-        <?php } else { ?>
+    <?php include 'inc/pages/nav.php'; ?>
+
     <section class="forms mb-5">
         <div id="Success" ></div>
         <form id="add" >
@@ -90,7 +56,7 @@
             </div>
         </form>
     </section>
-    <?php } ?>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="js/all.min.js"></script>
     <script>
