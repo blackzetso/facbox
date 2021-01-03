@@ -46,10 +46,10 @@
                                                             <label> اظهار حسب التاريخ </label>
                                                             <select  class="form-control" name="date" >
                                                                 <?php 
-                                                                    $begin = new DateTime($today);
+                                                                    $begin = new DateTime("01-01-2021");
                                                                     $end   = new DateTime("01-01-2022");
                                                                     for($i = $begin; $i <= $end; $i->modify('+1 day')){ ?>
-                                                                    <option value="<?php echo $i->format("Y-m-d"); ?>" ><?php echo $i->format("Y-m-d"); ?></option>
+                                                                    <option <?php if($i->format("Y-m-d") == $today){ echo 'selected'; } ?> value="<?php echo $i->format("Y-m-d"); ?>" ><?php echo $i->format("Y-m-d"); ?></option>
                                                                 <?php } ?>
                                                             </select>
                                                         </div> 
@@ -58,22 +58,26 @@
                                             </div>
 											<div class="row">
 												<div class="col-md-12">
+                                                    
 													<div class="table-responsive">
 														<table class="table border text-center table-bordered text-nowrap">
 															<thead>
 																<tr> 
 																	<th class="border-0 text-uppercase  font-weight-bold">المنتج</th> 
+                                                                    <th class="border-0 text-uppercase  font-weight-bold"> عدد الطلبات </th>
 																	<th class="border-0 text-uppercase  font-weight-bold"> سعر الوحدة </th>
 																	<th class="border-0 text-uppercase  font-weight-bold"> إجمالي الكمية </th>
 																	<th class="border-0 text-uppercase  font-weight-bold">الإجمالى</th>
 																</tr>
 															</thead>
 															<tbody id="ajax" >
+                                                                
                                                                 <?php foreach($rows as $cat) {
                                                              
                                                                     $stmt = $con->prepare("SELECT * FROM order_items WHERE item_id = ? ");
                                                                     $stmt->execute([$cat['item_id']]);
                                                                     $row = $stmt->fetch(); 
+                                                                    $Count = $stmt->rowCount();
     
                                                                     $stmt = $con->prepare("SELECT SUM(qty) FROM order_items WHERE item_id = ? AND date = ? ");
                                                                     $stmt->execute([$cat['item_id'],$today]);
@@ -81,8 +85,9 @@
     
                                                                     $total = $qty['SUM(qty)'] * $row['price']; ?>
                                                                 
-																<tr dir="rtl" > 
+																<tr id="ajax-remove" dir="rtl" > 
 																	<td><?php echo $row['name']; ?></td>
+                                                                    <td><?php echo $Count; ?></td>
 																	<td><?php echo $row['price']; ?> جنيه</td>
 																	<td><b><?php echo $qty['SUM(qty)']; ?></b></td>
 																	<td><?php echo $total; ?> جنيه</td> 
@@ -171,8 +176,8 @@
                         type:'POST',
                         url:'inc/invoice/data.php',
                         beforeSend:function(){
-                            Form.find("button[type='submit']").prepend('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
-                            Form.find("button[type='submit']").attr('disabled','true');
+                             $("#ajax-remove").remove();
+                             $("#ajax").prepend('<tr dir="rtl" ><td class="border-0" ></td><td class="border-0" ></td><td class="border-0" ><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></td><td class="border-0" ></td></tr>');
                         },
                         data:new FormData(this),
                         contentType:false,
@@ -182,7 +187,6 @@
                         },
                         complete:function(data){
                             $('.spinner-border').remove();
-                            Form.find("button[type='submit']").removeAttr('disabled');
                         }
                     })
                 });

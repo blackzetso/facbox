@@ -43,24 +43,12 @@
 									<div class="mt-xl-5">
 										<div class="bg-transparent carouselTestimonial1 p-4 mx-auto mt-xl-5 mb-3 w-600">
 											<div id="carouselTestimonial" class="carousel carousel-testimonial slide" data-ride="carousel">
-												<ol class="carousel-indicators carousel-indicators1">
-													<li data-target="#carouselTestimonial" data-slide-to="0" class="active"></li>
-													<li data-target="#carouselTestimonial" data-slide-to="1"></li>
-													<li data-target="#carouselTestimonial" data-slide-to="2"></li>
-												</ol>
+												 
 												<div class="carousel-inner">
 													<div class="carousel-item text-center active">
-														<img src="assets/img/brand/logo-white.png" class="mb-2  mt-lg-0 " alt="logo">
-														<p class="m-0 pt-2 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, consectetur adipiscing elit varius quam at, luctus dui. Mauris magna metus consectetur adipiscing elit.</p>
-													</div>
-													<div class="carousel-item text-center">
-														<img src="assets/img/brand/logo-white.png" class="mb-2  mt-lg-0 " alt="logo">
-														<p class="m-0 pt-2 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, consectetur adip varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel.</p>
-													</div>
-													<div class="carousel-item text-center">
-														<img src="assets/img/brand/logo-white.png" class="mb-2  mt-lg-0 " alt="logo">
-														<p class="m-0 pt-2 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, consectetur adipiscing elit consectetur adipiscing elit luctus dui. Mauris magna metus.</p>
-													</div>
+														<img style="height: 150px;" src="../img/logo.png" class="mb-2  mt-lg-0 " alt="logo">
+														<p class="m-0 pt-2 text-white">Welcome In FaceBox Admin Panel</p>
+													</div> 
 												</div>
 
 											</div>
