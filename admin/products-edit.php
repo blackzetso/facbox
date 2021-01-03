@@ -92,11 +92,17 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-12" >
                                                     <div class="form-group text-right" >
+                                                        <label for="recipient-name" class="form-control-label " dir="rtl">  ترتيب المنتج  :  </label>
+                                                        <input type="number" class="form-control text-right" dir="rtl" name="order" value="<?php echo $row['order_product'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12" >
+                                                    <div class="form-group text-right" >
                                                         <label for="recipient-name" class="form-control-label " dir="rtl"> الأرقام العشريه للوحده :  </label>
                                                         <input type="text" class="form-control text-right" dir="rtl" name="decimal"required value="<?php echo $row['Decimal_number'] ?>"> 
                                                     </div>
                                                 </div>
-                                                <div class="col-md-12 col-sm-12" >
+                                                <div class="col-md-6 col-sm-12" >
                                                     <div class="form-group text-right" >
                                                         <label for="recipient-name" class="form-control-label " dir="rtl"> الإتاحه : <span class="text-danger" >*</span></label>
                                                         <select class="form-control" name="Availability" required > 

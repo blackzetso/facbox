@@ -5,6 +5,7 @@
     $name = $_POST['name'];
     $unit = $_POST['unit'];
     $price = $_POST['price'];
+    $order = $_POST['order'];
     $discount = $_POST['discount'];
     $decimal  = $_POST['decimal'];
     $Availability = $_POST['Availability'];
@@ -40,10 +41,10 @@
             $neName   = rand(0,10000000) .'.' . $Extension;
             move_uploaded_file($tmp ,'../../../img/products/' . $neName);
             
-            $stmt = $con->prepare("INSERT INTO `products` ( `name`, `img`, `description`, `short_desc`, `price`, `unite`, `Decimal_number`, `discount`,`Availability`, `category`, `subcategory`) 
+            $stmt = $con->prepare("INSERT INTO `products` ( `name`, `img`, `description`, `short_desc`, `price`, `unite`, `Decimal_number`, `discount`,`order_product`,`Availability`, `category`, `subcategory`) 
                                                     VALUES 
-                                                          (?,?,?,?,?,?,?,?,?,?,?)");
-            $stmt->execute([$name,$neName,$description,$short_desc,$price,$unit,$decimal,$discount,$Availability,$category,$subCat]);
+                                                          (?,?,?,?,?,?,?,?,?,?,?,?)");
+            $stmt->execute([$name,$neName,$description,$short_desc,$price,$unit,$decimal,$discount,$order,$Availability,$category,$subCat]);
 
         if($stmt){
             echo successMessage('تم إضافة منتج جديد');

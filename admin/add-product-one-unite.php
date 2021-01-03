@@ -81,6 +81,12 @@
                                                         </div>
                                                         <div class="col-md-6 col-sm-12" >
                                                             <div class="form-group text-right" >
+                                                                <label for="recipient-name" class="form-control-label " dir="rtl">  ترتيب المنتج  :  </label>
+                                                                <input type="number" class="form-control text-right" dir="rtl" name="order" value="0">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 col-sm-12" >
+                                                            <div class="form-group text-right" >
                                                                 <label for="recipient-name" class="form-control-label " dir="rtl"> الإتاحه : <span class="text-danger" >*</span></label>
                                                                 <select class="form-control" name="Availability" required > 
                                                                     <option selected value="متوفر فى المخزن" > متوفر فى المخزن </option>

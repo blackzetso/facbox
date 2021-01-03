@@ -1,7 +1,7 @@
 <?php include 'init.php';  
 
       $id = isset($_GET['id']) && is_numeric($_GET['id']) ? intval($_GET['id']) : 0;
-      $stmt = $con->prepare("SELECT * FROM products WHERE subcategory = ? ORDER BY id DESC");
+      $stmt = $con->prepare("SELECT * FROM products WHERE subcategory = ? ORDER BY order_product ASC");
       $stmt->execute([$id]);
       $rows = $stmt->fetchAll(); ?>
 

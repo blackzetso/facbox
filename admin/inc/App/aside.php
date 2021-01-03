@@ -30,6 +30,9 @@
                                 <li><a href="canceled.php" class="slide-item"> مرتجع </a></li> 
 							</ul>
 						</li>
+                        <li>
+							<a class="side-menu__item" href="combined-invoice.php"><i class="side-menu__icon ti-pencil-alt"></i><span class="side-menu__label">فاتورة مجمعه</span></a>
+						</li>
 					    <li class="slide">
 							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-users"></i><span class="side-menu__label"> المستخدمين </span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">

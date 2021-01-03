@@ -1,6 +1,6 @@
 <?php include 'init.php'; 
      
-      $stmt = $con->prepare("SELECT * FROM products ORDER BY id DESC");
+      $stmt = $con->prepare("SELECT * FROM products ORDER BY order_product DESC");
       $stmt->execute();
       $rows = $stmt->fetchAll();
 
